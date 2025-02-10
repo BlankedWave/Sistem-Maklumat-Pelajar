@@ -28,6 +28,16 @@
         .card-back {
             transform: rotateY(180deg);
         }
+        @keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.status-active {
+    color: green;
+    font-weight: bold;
+    animation: flash 1s infinite;
+}
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -60,7 +70,7 @@
                     <p><strong>Phone:</strong> +601129451689</p>
                     <p><strong>Address:</strong> Lot 1291, Kampung Binjal Kubang Terap, 17000 Pasir Mas, Kelantan</p>
                     <p><strong>Enrollment Year:</strong> 2023</p>
-                    <p><strong>Status:</strong> Active</p>
+                    <p><strong>Status:</strong> <span class="status-active">Active</span></p>
                 </div>
             </div>
         </div>
