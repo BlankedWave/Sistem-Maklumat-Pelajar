@@ -59,25 +59,21 @@ body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-#menu {
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0;
-}
-
-#menu.show {
-    max-height: 200px; /* Adjust based on content size */
-    opacity: 1;
-    padding: 10px;
-}
+ #menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            background-color: white;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #menu.show {
+            max-height: 200px;
+            padding: 10px;
+        }
 
 
         
@@ -143,10 +139,10 @@ body {
         function toggleCard() {
             document.getElementById("studentCard").classList.toggle("flipped");
         }
-       document.getElementById("menu-btn").addEventListener("click", function() {
-    let menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-});
+               document.getElementById("menu-btn").addEventListener("click", function() {
+            let menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        });
 
 
     </script>
