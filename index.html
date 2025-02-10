@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details | UiTM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-4xl mx-auto p-6">
+        <header class="bg-blue-900 text-white text-center p-4 rounded-lg">
+            <h1 class="text-2xl font-bold">Universiti Teknologi MARA (UiTM)</h1>
+            <p>Student Information System</p>
+        </header>
+        
+        <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+            <h2 class="text-xl font-semibold mb-4">Student Details</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <p><strong>Name:</strong> Ahmad Faiz</p>
+                    <p><strong>Student ID:</strong> 2023123456</p>
+                    <p><strong>Program:</strong> Bachelor of Computer Science</p>
+                    <p><strong>Faculty:</strong> Faculty of Computer and Mathematical Sciences</p>
+                    <p><strong>Email:</strong> faiz@student.uitm.edu.my</p>
+                </div>
+                <div>
+                    <p><strong>Phone:</strong> +6012-3456789</p>
+                    <p><strong>Address:</strong> 12, Jalan Merdeka, Shah Alam, Selangor</p>
+                    <p><strong>Enrollment Year:</strong> 2023</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+            <h2 class="text-xl font-semibold mb-4">Student Card</h2>
+            <div class="flex justify-center space-x-6">
+                <div class="relative">
+                    <img id="studentCard" src="front-card.jpg" alt="Student Card Front" class="w-64 rounded-lg shadow-md">
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button onclick="toggleCard()" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700">
+                    Flip Card
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let frontCard = "front-card.jpg";
+        let backCard = "back-card.jpg";
+        let isFront = true;
+        
+        function toggleCard() {
+            const card = document.getElementById("studentCard");
+            isFront = !isFront;
+            card.src = isFront ? frontCard : backCard;
+        }
+    </script>
+</body>
+</html>
