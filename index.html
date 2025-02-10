@@ -71,8 +71,11 @@
 #menu.show {
     max-height: 200px;
     opacity: 1;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
@@ -87,8 +90,8 @@ body {
         <div class="max-w-6xl mx-auto flex items-center justify-between px-6">
             <img src="uitmlogo.png" alt="UiTM Logo" class="h-12">
             <button id="menu-btn" class="md:hidden text-white text-xl">☰</button>
-            <nav id="menu" class="md:flex space-x-6 md:relative md:block md:bg-transparent md:shadow-none md:max-h-full hidden">
-                <ul class="md:flex space-x-6 flex-col md:flex-row bg-white md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none">
+            <nav id="menu" class="md:flex hidden flex-col md:flex-row md:relative md:block bg-white md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none w-full md:w-auto">
+                <ul class="md:flex md:space-x-6">
                     <li><a href="#" class="hover:underline">Home</a></li>
                     <li><a href="#" class="hover:underline">About</a></li>
                     <li><a href="#" class="hover:underline">Student Info</a></li>
@@ -142,10 +145,20 @@ body {
         function toggleCard() {
             document.getElementById("studentCard").classList.toggle("flipped");
         }
-            document.getElementById("menu-btn").addEventListener("click", function() {
-                let menu = document.getElementById("menu");
-                menu.classList.toggle("show");
-            });
+    
+        document.getElementById("menu-btn").addEventListener("click", function() {
+    let menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+
+    if (menu.classList.contains("show")) {
+        menu.style.display = "flex"; 
+    } else {
+        setTimeout(() => {
+            menu.style.display = "none"; 
+        }, 300);
+    }
+});
+
 
 
 
